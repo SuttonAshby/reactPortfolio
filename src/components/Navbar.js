@@ -11,7 +11,7 @@ const styles = {
   },
 };
 
-function NavBar(props) {
+function Navbar(props) {
   const { classes } = props;
 
   return (
@@ -27,7 +27,7 @@ function NavBar(props) {
   );
 }
 
-SimpleAppBar.propTypes = {
+Navbar.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
