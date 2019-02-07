@@ -5,6 +5,14 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import background from '../images/texture-bg.jpg';
 import Tri from './Tri.js'
+import aboutImage from '../images/about.png';
+import contactImage from '../images/contact.png';
+import craneImage from '../images/crane.jpg';
+import developerImage from '../images/developer.png';
+import headshotImage from '../images/headshot.jpg';
+import selectedWorksImage from '../images/selectedWorks.png';
+
+
 
 const styles = {
     root: {
@@ -41,17 +49,17 @@ function Landing(props) {
                 justify="center"
                 alignItems= "flex-end"
             >
-                <Tri up="true" />
-                <Tri />
-                <Tri up="true" />
+                <Tri up="true" transform="13vw" image={craneImage}/>
+                <Tri image={selectedWorksImage}/>
+                <Tri up="true" transform="-13vw" image={headshotImage}/>
             </Grid>
             <Grid container style={styles.lowerRow}
                 justify="center"
                 alignItems= "flex-start"
             >
-                <Tri />
-                <Tri up="true" />
-                <Tri />
+                <Tri transform="13vw" image={aboutImage}/>
+                <Tri up="true" image={contactImage}/>
+                <Tri transform="-13vw" image={developerImage}/>
             </Grid>
         </div>
     )
