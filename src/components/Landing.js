@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import background from '../images/texture-bg.jpg';
-import UpTri from './UpTri.js'
+import Tri from './Tri.js'
 
 const styles = {
     root: {
@@ -22,10 +22,13 @@ const styles = {
         width: "100vw",
         maxWidth: "100%",    
         background: "rgba(255,255,255,.5)",
-        // justifyContent: "center",
-        // alignItems: "center",
-        // flexDirection: "row",
-        // flexGrow: 1
+        paddingBottom: "2vh"
+    },
+    lowerRow: {
+        height: "50vh",
+        width: "100vw",
+        maxWidth: "100%",
+        paddingTop: "2vh"    
     }
   };
 
@@ -35,12 +38,20 @@ function Landing(props) {
     return (
         <div style={styles.landing}>
             <Grid container style={styles.upperRow}
-                justifyContent="center"
-                alignItems= "center"
+                justify="center"
+                alignItems= "flex-end"
             >
-                <UpTri up="true" />
-                <UpTri />
-                <UpTri up="true" />
+                <Tri up="true" />
+                <Tri />
+                <Tri up="true" />
+            </Grid>
+            <Grid container style={styles.lowerRow}
+                justify="center"
+                alignItems= "flex-start"
+            >
+                <Tri />
+                <Tri up="true" />
+                <Tri />
             </Grid>
         </div>
     )
