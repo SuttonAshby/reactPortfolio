@@ -30,7 +30,8 @@ const styles = {
         width: "100vw",
         maxWidth: "100%",    
         background: "rgba(255,255,255,.5)",
-        paddingBottom: "2vh"
+        paddingBottom: "2vh",
+        // overflow: "hidden"
     },
     lowerRow: {
         height: "50vh",
