@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 import background from '../images/texture-bg.jpg';
 import UpTri from './UpTri.js'
 
@@ -13,13 +14,18 @@ const styles = {
         height: "100vh",
         width: "100vw",
         maxWidth: "100%",
-        backgroundImage: `url(${background})`
+        backgroundImage: `url(${background})`,
+
     },
     upperRow: {
         height: "50vh",
         width: "100vw",
         maxWidth: "100%",    
-        background: "rgba(255,255,255,.5)"            
+        background: "rgba(255,255,255,.5)",
+        // justifyContent: "center",
+        // alignItems: "center",
+        // flexDirection: "row",
+        // flexGrow: 1
     }
   };
 
@@ -28,9 +34,14 @@ function Landing(props) {
 
     return (
         <div style={styles.landing}>
-            <div style={styles.upperRow}>
+            <Grid container style={styles.upperRow}
+                justifyContent="center"
+                alignItems= "center"
+            >
+                <UpTri up="true" />
                 <UpTri />
-            </div>
+                <UpTri up="true" />
+            </Grid>
         </div>
     )
 }
