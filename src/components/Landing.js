@@ -50,17 +50,17 @@ function Landing(props) {
                 justify="center"
                 alignItems= "flex-end"
             >
-                <Tri up="true" transform="13vw" image={craneImage}/>
+                <Tri up="true" transform="14vw" image={craneImage}/>
                 <Tri image={selectedWorksImage}/>
-                <Tri up="true" transform="-13vw" image={headshotImage}/>
+                <Tri up="true" transform="-14vw" image={headshotImage}/>
             </Grid>
             <Grid container style={styles.lowerRow}
                 justify="center"
                 alignItems= "flex-start"
             >
-                <Tri transform="13vw" image={aboutImage}/>
+                <Tri transform="14vw" image={aboutImage}/>
                 <Tri up="true" image={contactImage}/>
-                <Tri transform="-13vw" image={developerImage}/>
+                <Tri transform="-14vw" image={developerImage}/>
             </Grid>
         </div>
     )
