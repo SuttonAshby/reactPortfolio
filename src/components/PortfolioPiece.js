@@ -19,7 +19,14 @@ function PortfolioPiece (props) {
         },
         codeImage: {
             backgroundImage:  `url(${props.codeImage})`
+        },
+        siteImageSelected: {
+            
+        },
+        codeImageSelected: {
+
         }
+
     }
     return (
         <Grid>
