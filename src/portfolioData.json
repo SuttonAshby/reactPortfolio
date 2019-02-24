@@ -1,0 +1,45 @@
+{
+    "works":[
+        {
+            "key": 0,
+            "title": "Foxhall Design Company",
+            "blurb": "",
+            "codeImage": "",
+            "siteImage": ""
+        },
+        {
+            "key": 1,
+            "title": "Rock Paper Scissors Lizard Spock",
+            "blurb": "Real-time Multiplayer Game",
+            "codeImage": "images/RPSLVcode.png",
+            "siteImage": "images/RPSLVsite.png"
+        },
+        {
+            "key": 2,
+            "title": "Star Wars Combat Game",
+            "blurb": "Combat Puzzler",
+            "codeImage": "images/starWarsCode.png",
+            "siteImage": "images/starWarsSite.png"
+        },
+        {
+            "key": 3,
+            "title": "Node.js Assistant",
+            "blurb": "Node base CLI for spotify and imdb look ups",
+            "codeImage": "images/liriCode.png",
+            "siteImage": "images/liriCode.png"
+        },
+        {
+            "key": 4,
+            "title": "Fight Club Game",
+            "blurb": "Asymmetric multiplayer RPG game",
+            "codeImage": "images/fightClubCode.png",
+            "siteImage": "images/fightClubSite.png"
+        },
+        {
+            "key": 5,
+            "title": "SnapCos",
+            "blurb": "React Native app for taking pictures at conventions",
+            "codeImage": "images/snapCosCode.png",
+            "siteImage": "images/snapCosApp.PNG"
+        }
+    ]}

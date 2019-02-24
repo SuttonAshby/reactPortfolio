@@ -14,9 +14,6 @@ const styles = {
 
 function SelectedWorks (props) {
 
-
-
-
     return (
         <Grid container style={styles.selectedWorks}>
             
