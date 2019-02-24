@@ -10,16 +10,16 @@ function Tri (props) {
             clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)",
             backgroundImage: `url(${props.image})`,
             backgroundSize: "cover",
-            width: '33vw',
-            height: 'calc(33vw/1.5)',
+            width: '32vw',
+            height: 'calc(32vw/1.5)',
             transform: `translateX(${props.transform})`    
         },
         DownTri:{
             clipPath: "polygon(50% 100%, 0 0, 100% 0)",
             backgroundImage: `url(${props.image})`,
             backgroundSize: "cover",
-            width: '33vw',
-            height: 'calc(33vw/1.5)',
+            width: '32vw',
+            height: 'calc(32vw/1.5)',
             transform: `translateX(${props.transform})`        
         }
     }   
