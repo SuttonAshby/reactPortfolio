@@ -7,7 +7,8 @@ import Grid from '@material-ui/core/Grid';
 const styles = {
     selectedWorks: {
         width: "100vw",
-        maxWidth: "100%"
+        maxWidth: "100%",
+        minHeight: "100vh"
     }
 }
 
