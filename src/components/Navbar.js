@@ -8,6 +8,9 @@ import Typography from '@material-ui/core/Typography';
 const styles = {
   root: {
     flexGrow: 1,
+    position: "-webkit-sticky",
+    position: "sticky",
+    top: "0"
   },
 };
 

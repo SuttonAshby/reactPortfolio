@@ -3,6 +3,7 @@ import background from '../images/texture-bg.jpg';
 import Landing from '../components/Landing.js';
 import About from '../components/About.js';
 import SelectedWorks from '../components/SelectedWorks';
+import Navbar from '../components/Navbar';
 
 
 
@@ -16,14 +17,21 @@ const styles = {
     }
 }
 
+//notes: separate landing component from all other page components
+
 function Home(props) {
     const { classes } = props;
 
     return (
         <div style={styles.home}>
             <Landing />
+            <div>
+            <Navbar 
+                position="absolute" />
             <SelectedWorks />
-            <About />    
+            <About />  
+                </div>
+  
         </div>
     )
 }
