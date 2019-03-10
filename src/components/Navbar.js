@@ -12,6 +12,9 @@ const styles = {
     position: "sticky",
     top: "0"
   },
+  navbar: {
+    background: "rgba(255,255,255,.4)"
+  }
 };
 
 function Navbar(props) {
@@ -19,9 +22,9 @@ function Navbar(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="default">
+      <AppBar position="static" style={styles.navbar}>
         <Toolbar>
-          <Typography variant="h6" color="inherit">
+          <Typography variant="h6" >
             Photos
           </Typography>
         </Toolbar>
