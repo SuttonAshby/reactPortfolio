@@ -20,12 +20,14 @@ const styles = {
 function Navbar(props) {
   const { classes } = props;
 
+  let current = "Portfolio";
+
   return (
     <div className={classes.root}>
       <AppBar position="static" style={styles.navbar}>
         <Toolbar>
           <Typography variant="h6" >
-            Photos
+            {current}
           </Typography>
         </Toolbar>
       </AppBar>
