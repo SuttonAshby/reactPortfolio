@@ -26,7 +26,7 @@
             "title": "Node.js Assistant",
             "blurb": "Node base CLI for spotify and imdb look ups",
             "codeImage": "images/liriCode.png",
-            "siteImage": "images/liriCode.png"
+            "siteImage": "images/liriCLI.png"
         },
         {
             "key": 4,

@@ -10,7 +10,7 @@ const styles = {
     selectedWorks: {
         width: "100vw",
         maxWidth: "100%",
-        minHeight: "100vh"
+        minHeight: "100vh",
     }
 }
 
@@ -18,6 +18,8 @@ const styles = {
 function SelectedWorks (props) {
 
     const works = data.works.map((item) => {
+        console.log(item.codeImage)
+        console.log(item.siteImage)
         return <PortfolioPiece 
             title={item.title}
             blurb={item.blurb}

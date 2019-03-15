@@ -26,8 +26,7 @@ function Home(props) {
         <div style={styles.home}>
             <Landing />
             <div>
-            <Navbar 
-                position="absolute" />
+            <Navbar />
             <SelectedWorks />
             <About />  
                 </div>

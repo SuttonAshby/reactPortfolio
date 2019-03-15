@@ -14,11 +14,22 @@ function PortfolioPiece (props) {
             left: 0,
             backgroundSize: "cover"
         },
+        imageContainer: {
+            width: 300,
+            height: 300,
+            position: "relative"
+        },
         siteImage: {
-            backgroundImage:  `url(${props.siteImage})`
+            backgroundImage:  `url(${props.siteImage})`,
+            width: 300,
+            height: 300,
+            clipPath: "polygon(0 0, 100% 100%, 100% 0)"
         },
         codeImage: {
-            backgroundImage:  `url(${props.codeImage})`
+            backgroundImage:  `url(${props.codeImage})`,
+            width: 300,
+            height: 300,
+            clipPath: "polygon(0 0, 0% 100%, 100% 100%)"
         },
         siteImageSelected: {
             
@@ -33,7 +44,7 @@ function PortfolioPiece (props) {
             <Card>
                 <Typography>{props.title}</Typography>
                 <Typography>{props.blurb}</Typography>
-                <div>
+                <div style={styles.imageContainer}>
                     <div style={{...styles.imagePositioning, ...styles.codeImage}} />
                     <div style={{...styles.imagePositioning, ...styles.siteImage}} />   
                 </div>
