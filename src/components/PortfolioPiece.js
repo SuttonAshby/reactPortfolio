@@ -40,7 +40,7 @@ function PortfolioPiece (props) {
 
     }
     return (
-        <Grid>
+        <Grid item>
             <Card>
                 <Typography>{props.title}</Typography>
                 <Typography>{props.blurb}</Typography>

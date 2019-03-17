@@ -29,8 +29,12 @@ function SelectedWorks (props) {
     })
 
     return (
-        <Grid container style={styles.selectedWorks}>
-            {works}
+        <Grid container 
+            justify="center"
+            style={styles.selectedWorks}
+            spacing={16}
+            >
+                {works}
         </Grid>
     )
 
