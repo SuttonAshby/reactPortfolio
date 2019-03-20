@@ -13,7 +13,9 @@ class PortfolioPiece extends React.Component {
                 position: "absolute",
                 top: 0,
                 left: 0,
-                backgroundSize: "cover"
+                backgroundSize: "cover",
+                width: 300,
+                height: 300,
             },
             imageContainer: {
                 width: 300,
@@ -21,23 +23,39 @@ class PortfolioPiece extends React.Component {
                 position: "relative"
             },
             siteImage: {
-                backgroundImage:  `url(${props.siteImage})`,
-                width: 300,
-                height: 300,
-                clipPath: "polygon(0 0, 100% 100%, 100% 0)"
+                backgroundImage:  `url(${props.siteImage})`
             },
             codeImage: {
-                backgroundImage:  `url(${props.codeImage})`,
-                width: 300,
-                height: 300,
+                backgroundImage:  `url(${props.codeImage})`                
+            },
+            siteClip: {
+                clipPath: "polygon(0 0, 100% 100%, 100% 0)"
+            },
+            codeClip: {
                 clipPath: "polygon(0 0, 0% 100%, 100% 100%)"
             },
-            siteImageSelected: {
-    
-            },
-            codeImageSelected: {
-    
-            }   
+            selected: false              
+        }
+        this.hoverSite = this.hoverSite.bind(this);
+    }
+
+    hoverSite(){
+        if(!this.state.selected) {
+            this.setState({codeClip: {
+                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
+            }})
+            this.setState({siteClip: {
+                clipPath: "polygon(0 0, 0 0, 0 0, 0 0)"
+            }})
+            this.setState({selected: true})
+        } else {
+            this.setState({codeClip: {
+                clipPath: "polygon(0 0, 0% 100%, 100% 100%)"
+            }})
+            this.setState({siteClip: {
+                clipPath: "polygon(0 0, 100% 100%, 100% 0)"
+            }})
+            this.setState({selected: false})           
         }
     }
  
@@ -45,11 +63,14 @@ class PortfolioPiece extends React.Component {
         return (
             <Grid item>
             <Card>
-                <Typography>{props.title}</Typography>
-                <Typography>{props.blurb}</Typography>
+                <Typography>{this.state.title}</Typography>
+                <Typography>{this.state.blurb}</Typography>
                 <div style={this.state.imageContainer}>
-                    <div style={{...this.state.imagePositioning, ...this.state.codeImage}} />
-                    <div style={{...this.state.imagePositioning, ...this.state.siteImage}} />   
+                    <div 
+                        style={{...this.state.imagePositioning, ...this.state.codeImage, ...this.state.codeClip}}
+                        onMouseEnter={this.hoverSite}
+                        onMouseLeave={this.hoverSite} />
+                    <div style={{...this.state.imagePositioning, ...this.state.siteImage,...this.state.siteClip}} />   
                 </div>
             </Card>
         </Grid>

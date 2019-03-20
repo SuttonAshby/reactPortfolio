@@ -8,4 +8,8 @@ on hover for buttons
 scroll to element
 scroll over landing page
 
+
+bugs
+portfolio piece now on top of navbar when scrolling
+
 try hooks in functional component
