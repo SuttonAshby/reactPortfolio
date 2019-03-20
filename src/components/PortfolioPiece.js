@@ -34,17 +34,38 @@ class PortfolioPiece extends React.Component {
             codeClip: {
                 clipPath: "polygon(0 0, 0% 100%, 100% 100%)"
             },
-            selected: false              
+            selected: false             
         }
         this.hoverSite = this.hoverSite.bind(this);
+        this.hoverCode = this.hoverCode.bind(this);
     }
 
-    hoverSite(){
+    hoverCode(){
         if(!this.state.selected) {
             this.setState({codeClip: {
                 clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
             }})
             this.setState({siteClip: {
+                clipPath: "polygon(0 0, 0 0, 0 0, 0 0)"
+            }})
+            this.setState({selected: true})
+        } else {
+            this.setState({codeClip: {
+                clipPath: "polygon(0 0, 0% 100%, 100% 100%)"
+            }})
+            this.setState({siteClip: {
+                clipPath: "polygon(0 0, 100% 100%, 100% 0)"
+            }})
+            this.setState({selected: false})           
+        }
+    }
+
+    hoverSite(){
+        if(!this.state.selected) {
+            this.setState({siteClip: {
+                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
+            }})
+            this.setState({codeClip: {
                 clipPath: "polygon(0 0, 0 0, 0 0, 0 0)"
             }})
             this.setState({selected: true})
@@ -68,9 +89,12 @@ class PortfolioPiece extends React.Component {
                 <div style={this.state.imageContainer}>
                     <div 
                         style={{...this.state.imagePositioning, ...this.state.codeImage, ...this.state.codeClip}}
+                        onMouseEnter={this.hoverCode}
+                        onMouseLeave={this.hoverCode} />
+                    <div 
+                        style={{...this.state.imagePositioning, ...this.state.siteImage,...this.state.siteClip}} 
                         onMouseEnter={this.hoverSite}
-                        onMouseLeave={this.hoverSite} />
-                    <div style={{...this.state.imagePositioning, ...this.state.siteImage,...this.state.siteClip}} />   
+                        onMouseLeave={this.hoverSite} />   
                 </div>
             </Card>
         </Grid>
