@@ -5,6 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
+
 const styles = {
   root: {
     flexGrow: 1,
@@ -13,7 +14,7 @@ const styles = {
     top: "0"
   },
   navbar: {
-    background: "rgba(255,255,255,.4)"
+    background: "rgba(255,255,255,.4)",
   }
 };
 

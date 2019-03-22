@@ -16,6 +16,7 @@ class PortfolioPiece extends React.Component {
                 backgroundSize: "cover",
                 width: 300,
                 height: 300,
+                zIndex: 500
             },
             imageContainer: {
                 width: 300,
@@ -34,7 +35,9 @@ class PortfolioPiece extends React.Component {
             codeClip: {
                 clipPath: "polygon(0 0, 0% 100%, 100% 100%)"
             },
-            selected: false             
+            selected: false,
+            title: props.title,
+            blurb: props.blurb             
         }
         this.hoverSite = this.hoverSite.bind(this);
         this.hoverCode = this.hoverCode.bind(this);
