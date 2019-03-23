@@ -23,6 +23,8 @@ const styles = {
         width: "100vw",
         maxWidth: "100%",
         // backgroundImage: `url(${background})`,
+        position: "fixed",
+        top: 0
 
     },
     upperRow: {

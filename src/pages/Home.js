@@ -14,7 +14,11 @@ const styles = {
     home: {
         backgroundImage: `url(${background})`,
         // backgroundSize: "cover",
+    },
+    offset:{
+        marginTop: "100vh"    
     }
+
 }
 
 //notes: separate landing component from all other page components
@@ -25,11 +29,11 @@ function Home(props) {
     return (
         <div style={styles.home}>
             <Landing />
-            <div>
+            <div style={styles.offset}>
             <Navbar />
             <SelectedWorks />
             <About />  
-                </div>
+            </div>
   
         </div>
     )
