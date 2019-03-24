@@ -16,7 +16,11 @@ const styles = {
         // backgroundSize: "cover",
     },
     offset:{
-        marginTop: "100vh"    
+        marginTop: "100vh",
+        // backgroundImage: `url(${background})`,
+        background: "red",
+        backgroundSize: "cover"
+    
     }
 
 }
@@ -27,7 +31,9 @@ function Home(props) {
     const { classes } = props;
 
     return (
-        <div style={styles.home}>
+        <div 
+            // style={styles.home}
+        >
             <Landing />
             <div style={styles.offset}>
             <Navbar />

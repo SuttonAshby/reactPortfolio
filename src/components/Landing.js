@@ -22,7 +22,7 @@ const styles = {
         height: "100vh",
         width: "100vw",
         maxWidth: "100%",
-        // backgroundImage: `url(${background})`,
+        backgroundImage: `url(${background})`,
         position: "fixed",
         top: 0
 
