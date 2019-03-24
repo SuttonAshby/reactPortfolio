@@ -17,9 +17,12 @@ const styles = {
     },
     offset:{
         marginTop: "100vh",
-        // backgroundImage: `url(${background})`,
-        background: "red",
-        backgroundSize: "cover"
+        backgroundImage: `url(${background})`,
+        // background: "red",
+        // backgroundSize: "cover"
+        minHeight: "200vh",
+        width: "100vw",
+        maxWidth: "100%"
     
     }
 
