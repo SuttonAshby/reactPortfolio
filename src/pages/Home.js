@@ -2,6 +2,7 @@ import React from 'react';
 import background from '../images/texture-bg.jpg';
 import Landing from '../components/Landing.js';
 import About from '../components/About.js';
+import Contact from '../components/Contact.js';
 import SelectedWorks from '../components/SelectedWorks';
 import Navbar from '../components/Navbar';
 
@@ -41,7 +42,8 @@ function Home(props) {
             <div style={styles.offset}>
             <Navbar />
             <SelectedWorks />
-            <About />  
+            <About />
+            <Contact />  
             </div>
   
         </div>

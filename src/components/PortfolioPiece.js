@@ -16,7 +16,6 @@ class PortfolioPiece extends React.Component {
                 backgroundSize: "cover",
                 width: 300,
                 height: 300,
-                zIndex: 500
             },
             imageContainer: {
                 width: 300,
