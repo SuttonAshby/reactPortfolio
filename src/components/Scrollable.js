@@ -14,12 +14,11 @@ const styles = {
     },
     scrollable: {
         backgroundImage: `url(${background})`,
-        zIndex: "auto",
-        background: "red",
+        position: "relative",
         height: "100vh",
+        minHeight: "300vh",
         width: "100vw",
         maxWidth: "100%"
-
     }
 }
 
@@ -27,12 +26,12 @@ function Scrollable(props) {
     const { classes } = props;
 
     return (
-        <Grid container style={styles.scrollable}>
+        <div container style={styles.scrollable}>
             <Navbar />
             <SelectedWorks />
             <About />
             <Contact />  
-        </Grid>
+        </div>
     )
 }
 
