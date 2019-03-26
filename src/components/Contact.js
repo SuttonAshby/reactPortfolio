@@ -5,7 +5,7 @@ const styles = {
     root: {
         flexGrow: 1,
     },
-    about: {
+    contact: {
         height: "100vh",
         width: "100vw",
         maxWidth: "100%"
@@ -17,7 +17,7 @@ function Contact(props) {
     const { classes } = props;
 
     return (
-        <div style={styles.about}>
+        <div style={styles.contact}>
             
         </div>
     )

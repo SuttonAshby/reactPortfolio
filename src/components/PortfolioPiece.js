@@ -16,11 +16,13 @@ class PortfolioPiece extends React.Component {
                 backgroundSize: "cover",
                 width: 300,
                 height: 300,
+                zIndex: "auto",
             },
             imageContainer: {
                 width: 300,
                 height: 300,
-                position: "relative"
+                position: "relative",
+                zIndex: "auto",
             },
             siteImage: {
                 backgroundImage:  `url(${props.siteImage})`

@@ -8,6 +8,7 @@ import PortfolioPiece from './PortfolioPiece.js';
 
 const styles = {
     selectedWorks: {
+        zIndex: "auto",
         width: "100vw",
         maxWidth: "100%",
         minHeight: "100vh",

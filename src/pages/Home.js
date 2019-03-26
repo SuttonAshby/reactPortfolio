@@ -5,6 +5,7 @@ import About from '../components/About.js';
 import Contact from '../components/Contact.js';
 import SelectedWorks from '../components/SelectedWorks';
 import Navbar from '../components/Navbar';
+import Scrollable from '../components/Scrollable.js';
 
 
 
@@ -18,12 +19,12 @@ const styles = {
     },
     offset:{
         marginTop: "100vh",
-        backgroundImage: `url(${background})`,
+        // backgroundImage: `url(${background})`,
         // background: "red",
         // backgroundSize: "cover"
-        minHeight: "200vh",
-        width: "100vw",
-        maxWidth: "100%"
+        // minHeight: "200vh",
+        // width: "100vw",
+        // maxWidth: "100%"
     
     }
 
@@ -39,12 +40,13 @@ function Home(props) {
             // style={styles.home}
         >
             <Landing />
-            <div style={styles.offset}>
-            <Navbar />
+            <div style={styles.offset} />
+                <Scrollable />
+            {/* <Navbar />
             <SelectedWorks />
             <About />
-            <Contact />  
-            </div>
+            <Contact />   */}
+            {/* </div> */}
   
         </div>
     )
