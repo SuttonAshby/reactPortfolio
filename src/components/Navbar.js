@@ -11,7 +11,9 @@ const styles = {
     flexGrow: 1,
     position: "-webkit-sticky",
     position: "sticky",
-    top: "0"
+    top: "0",
+    zIndex: "1200",
+
   },
   navbar: {
     background: "rgba(255,255,255,.4)",
@@ -25,7 +27,7 @@ function Navbar(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={styles.navbar}>
+      <AppBar position="sticky" style={styles.navbar}>
         <Toolbar>
           <Typography variant="h6" >
             {current}

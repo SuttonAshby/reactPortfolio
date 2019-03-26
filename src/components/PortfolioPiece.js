@@ -16,13 +16,15 @@ class PortfolioPiece extends React.Component {
                 backgroundSize: "cover",
                 width: 300,
                 height: 300,
-                zIndex: "auto",
             },
             imageContainer: {
                 width: 300,
                 height: 300,
                 position: "relative",
-                zIndex: "auto",
+            },
+            card: {
+                position: "relative",
+                zIndex: "1100"
             },
             siteImage: {
                 backgroundImage:  `url(${props.siteImage})`
@@ -87,7 +89,7 @@ class PortfolioPiece extends React.Component {
     render() {
         return (
             <Grid item>
-            <Card>
+            <Card style={this.state.card}>
                 <Typography>{this.state.title}</Typography>
                 <Typography>{this.state.blurb}</Typography>
                 <div style={this.state.imageContainer}>
