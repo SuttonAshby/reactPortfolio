@@ -8,8 +8,6 @@ import PortfolioPiece from './PortfolioPiece.js';
 
 const styles = {
     selectedWorks: {
-        zIndex: "1100",
-        // position: "relative",
         width: "100vw",
         maxWidth: "100%",
         minHeight: "100vh",
@@ -31,13 +29,18 @@ function SelectedWorks (props) {
     })
 
     return (
+        <div className="testRef" ref={props.scrollRef} style={{paddingTop:120}}>
         <Grid container 
             justify="center"
             style={styles.selectedWorks}
             spacing={16}
+            // ref={props.scrollRef}
             >
+            {/* <div className="testRef" ref={props.scrollRef} /> */}
+
                 {works}
         </Grid>
+        </div>
     )
 
 }

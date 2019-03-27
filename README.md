@@ -5,8 +5,10 @@ dynamic nav text
 generate portfolio pieces from data
 footer
 on hover for buttons
+
 scroll to element
 scroll over landing page
+    scrolling to element offsets arent quite right
 
 
 bugs

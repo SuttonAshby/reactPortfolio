@@ -7,6 +7,9 @@ import SelectedWorks from '../components/SelectedWorks';
 import Navbar from '../components/Navbar';
 import Scrollable from '../components/Scrollable.js';
 
+//for testing
+import Button from '@material-ui/core/Button';
+
 
 
 const styles = {
@@ -19,37 +22,53 @@ const styles = {
     },
     offset:{
         marginTop: "100vh",
-        // backgroundImage: `url(${background})`,
+        backgroundImage: `url(${background})`,
         // background: "red",
         // backgroundSize: "cover"
-        // minHeight: "200vh",
-        // width: "100vw",
-        // maxWidth: "100%"
-    
+        minHeight: "300vh",
+        width: "100vw",
+        maxWidth: "100%",
+        position: "relative"    
     }
 
 }
 
 //notes: separate landing component from all other page components
 
-function Home(props) {
-    const { classes } = props;
+class Home extends React.Component {
+    constructor(props){
+        super(props);
+        this.scrollRef = React.createRef();
+    }
 
-    return (
-        <div 
-            // style={styles.home}
-        >
-            <Landing />
-            <div style={styles.offset} />
-                <Scrollable />
-            {/* <Navbar />
-            <SelectedWorks />
-            <About />
-            <Contact />   */}
-            {/* </div> */}
-  
-        </div>
-    )
+    scrollToRef = () => {
+        console.log(this.scrollRef.current.offsetTop)
+        window.scrollTo(0,this.scrollRef.current.offsetTop);
+    }
+
+
+    render(){
+        return (
+            <div>
+                <Button
+                    onClick={()=>{
+                        console.log("clicked")
+                        this.scrollRef.current.scrollIntoView({behavior: 'smooth'})
+                        // window.scrollBy(0, 64)
+                    }}
+                    // onClick={this.scrollToRef}
+                    >TEST CLICK</Button>
+                {/* <Landing /> */}
+                <div style={styles.offset} >
+                    {/* <Scrollable /> */}
+                    <Navbar />
+                    <SelectedWorks scrollRef={this.scrollRef}/>
+                    <About />
+                    <Contact />  
+                </div>
+                </div>
+        )
+    }
 }
 
 export default Home;
