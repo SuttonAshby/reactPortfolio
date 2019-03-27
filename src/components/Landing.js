@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import ButtonBase from '@material-ui/core/ButtonBase';
 import background from '../images/texture-bg.jpg';
 import Tri from './Tri.js'
 import aboutImage from '../images/about.png';
@@ -53,7 +54,12 @@ function Landing(props) {
                 alignItems= "flex-end"
             >
                 <Tri up="true" transform="14vw" image={craneImage}/>
-                <Tri image={selectedWorksImage}/>
+                <ButtonBase
+                    onClick={props.scrollToRef}>
+                <Tri image={selectedWorksImage}
+                    // onClick={()=> console.log("clicked on works")}
+                    />
+                </ButtonBase>
                 <Tri up="true" transform="-14vw" image={headshotImage}/>
             </Grid>
             <Grid container style={styles.lowerRow}

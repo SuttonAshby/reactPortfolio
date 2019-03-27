@@ -41,24 +41,24 @@ class Home extends React.Component {
         this.scrollRef = React.createRef();
     }
 
+    // scrollToRef = () => {
+    //     console.log(this.scrollRef.current.offsetTop)
+    //     window.scrollTo(0,this.scrollRef.current.offsetTop);
+    // }
     scrollToRef = () => {
-        console.log(this.scrollRef.current.offsetTop)
-        window.scrollTo(0,this.scrollRef.current.offsetTop);
+        console.log("clicked")
+        this.scrollRef.current.scrollIntoView({behavior: 'smooth'})
+        // window.scrollBy(0, 64)
     }
 
 
     render(){
         return (
             <div>
-                <Button
-                    onClick={()=>{
-                        console.log("clicked")
-                        this.scrollRef.current.scrollIntoView({behavior: 'smooth'})
-                        // window.scrollBy(0, 64)
-                    }}
-                    // onClick={this.scrollToRef}
-                    >TEST CLICK</Button>
-                {/* <Landing /> */}
+                {/* <Button
+                    onClick={this.scrollToRef}
+                    >TEST CLICK</Button> */}
+                <Landing scrollToRef={this.scrollToRef}/>
                 <div style={styles.offset} >
                     {/* <Scrollable /> */}
                     <Navbar />

@@ -9,6 +9,7 @@ on hover for buttons
 scroll to element
 scroll over landing page
     scrolling to element offsets arent quite right
+    need to adjust button base shape and ripple effect
 
 
 bugs
