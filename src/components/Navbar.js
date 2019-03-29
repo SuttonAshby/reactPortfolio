@@ -5,41 +5,44 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
-
-const styles = {
-  root: {
-    flexGrow: 1,
-    position: "-webkit-sticky",
-    position: "sticky",
-    top: "0",
-    zIndex: "1200",
-
-  },
-  navbar: {
-    background: "rgba(255,255,255,.4)",
+class Navbar extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      current: "Portfolio",
+      styles: {
+        root: {
+          flexGrow: 1,
+          position: "-webkit-sticky",
+          position: "sticky",
+          top: "0",
+          zIndex: "1200",      
+        },
+        navbar: {
+          background: "rgba(255,255,255,.4)",
+        }
+      }
+    }
+    this.navRef = React.createRef();
   }
-};
 
-function Navbar(props) {
-  const { classes } = props;
-
-  let current = "Portfolio";
-
-  return (
-    <div className={classes.root}>
-      <AppBar position="sticky" style={styles.navbar}>
-        <Toolbar>
-          <Typography variant="h6" >
-            {current}
-          </Typography>
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
+  render(){
+    return (
+      <div style={this.state.styles.root} >
+        <AppBar position="sticky" style={this.state.styles.navbar}>
+          <Toolbar>
+            <Typography variant="h6" >
+              {this.state.current}
+            </Typography>
+          </Toolbar>
+        </AppBar>
+      </div>
+    );
+  }
 }
+// Navbar.propTypes = {
+//   classes: PropTypes.object.isRequired,
+// };
 
-Navbar.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(Navbar);
+// export default withStyles(styles)(Navbar);
+export default Navbar;

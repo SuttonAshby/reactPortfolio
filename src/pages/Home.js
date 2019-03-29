@@ -38,10 +38,41 @@ const styles = {
 class Home extends React.Component {
     constructor(props){
         super(props);
+        this.state = {
+            workHeight: 0,
+            testing: "working"
+
+        }
         this.worksRef = React.createRef();
         this.aboutRef = React.createRef();
         this.contactRef = React.createRef();
+
+        this.testRef = React.createRef();
     }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleNavbar);
+      }
+      componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleNavbar)
+      }
+
+    componentDidUpdate(){
+        this.setState({workHeight: 5})
+    }
+    
+      handleNavbar(){
+        // let horizontal = this.state.navRef.scrollTop
+        let el = false
+        if(window.pageYOffset > window.innerHeight) {
+          el = true
+        }
+        // if(this.worksRef.)
+        console.log(window.pageYOffset)
+        console.log(window.innerHeight)
+        console.log(el)
+        console.log(this.state.testing)
+      }
 
     scrollToWorks = () => {
         this.worksRef.current.scrollIntoView({behavior: 'smooth'})
@@ -52,7 +83,6 @@ class Home extends React.Component {
     scrollToContact = () => {
         this.contactRef.current.scrollIntoView({behavior: 'smooth'})
     }
-
 
     render(){
         return (
@@ -66,12 +96,12 @@ class Home extends React.Component {
                     scrollToContact={this.scrollToContact}/>
                 <div style={styles.offset} >
                     {/* <Scrollable /> */}
-                    <Navbar />
-                    <SelectedWorks scrollRef={this.worksRef}/>
+                    <Navbar/>
+                    <SelectedWorks scrollRef={this.worksRef} ref={this.testRef}/>
                     <About scrollRef={this.aboutRef}/>
                     <Contact scrollRef={this.contactRef}/>  
                 </div>
-                </div>
+            </div>
         )
     }
 }
