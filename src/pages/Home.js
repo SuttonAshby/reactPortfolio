@@ -38,17 +38,19 @@ const styles = {
 class Home extends React.Component {
     constructor(props){
         super(props);
-        this.scrollRef = React.createRef();
+        this.worksRef = React.createRef();
+        this.aboutRef = React.createRef();
+        this.contactRef = React.createRef();
     }
 
-    // scrollToRef = () => {
-    //     console.log(this.scrollRef.current.offsetTop)
-    //     window.scrollTo(0,this.scrollRef.current.offsetTop);
-    // }
-    scrollToRef = () => {
-        console.log("clicked")
-        this.scrollRef.current.scrollIntoView({behavior: 'smooth'})
-        // window.scrollBy(0, 64)
+    scrollToWorks = () => {
+        this.worksRef.current.scrollIntoView({behavior: 'smooth'})
+    }
+    scrollToAbout = () => {
+        this.aboutRef.current.scrollIntoView({behavior: 'smooth'})
+    }
+    scrollToContact = () => {
+        this.contactRef.current.scrollIntoView({behavior: 'smooth'})
     }
 
 
@@ -58,13 +60,16 @@ class Home extends React.Component {
                 {/* <Button
                     onClick={this.scrollToRef}
                     >TEST CLICK</Button> */}
-                <Landing scrollToRef={this.scrollToRef}/>
+                <Landing 
+                    scrollToWorks={this.scrollToWorks}
+                    scrollToAbout={this.scrollToAbout}
+                    scrollToContact={this.scrollToContact}/>
                 <div style={styles.offset} >
                     {/* <Scrollable /> */}
                     <Navbar />
-                    <SelectedWorks scrollRef={this.scrollRef}/>
-                    <About />
-                    <Contact />  
+                    <SelectedWorks scrollRef={this.worksRef}/>
+                    <About scrollRef={this.aboutRef}/>
+                    <Contact scrollRef={this.contactRef}/>  
                 </div>
                 </div>
         )

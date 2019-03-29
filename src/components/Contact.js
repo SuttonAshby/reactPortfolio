@@ -17,7 +17,7 @@ function Contact(props) {
     const { classes } = props;
 
     return (
-        <div style={styles.contact}>
+        <div style={styles.contact} ref={props.scrollRef}>
             
         </div>
     )

@@ -55,10 +55,9 @@ function Landing(props) {
             >
                 <Tri up="true" transform="14vw" image={craneImage}/>
                 <ButtonBase
-                    onClick={props.scrollToRef}>
-                <Tri image={selectedWorksImage}
-                    // onClick={()=> console.log("clicked on works")}
-                    />
+                    style={{clipPath: "polygon(50% 100%, 0 0, 100% 0)"}}
+                    onClick={props.scrollToWorks}>
+                    <Tri image={selectedWorksImage}/>
                 </ButtonBase>
                 <Tri up="true" transform="-14vw" image={headshotImage}/>
             </Grid>
@@ -66,8 +65,19 @@ function Landing(props) {
                 justify="center"
                 alignItems= "flex-start"
             >
-                <Tri transform="14vw" image={aboutImage}/>
-                <Tri up="true" image={contactImage}/>
+                <ButtonBase
+                    style={{clipPath: "polygon(50% 100%, 0 0, 100% 0)", transform: `translateX(14vw)`
+                }}
+                    onClick={props.scrollToAbout}>
+                    <Tri 
+                    // transform="14vw" 
+                    image={aboutImage}/>
+                </ButtonBase>
+                <ButtonBase
+                    style={{clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)"}}
+                    onClick={props.scrollToContact}>
+                    <Tri up="true" image={contactImage}/>
+                </ButtonBase>
                 <Tri transform="-14vw" image={developerImage}/>
             </Grid>
         </div>

@@ -17,7 +17,7 @@ function About(props) {
     const { classes } = props;
 
     return (
-        <div style={styles.about}>
+        <div style={styles.about} ref={props.scrollRef}>
             
         </div>
     )
