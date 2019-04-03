@@ -49,7 +49,6 @@ class SelectedWorks extends React.Component {
         // this.state.callbackTest(this.state.height)
     }
 
-
     render(){
         return (
             <div className="testRef" ref={this.state.scrollRef} style={{paddingTop:120}}>

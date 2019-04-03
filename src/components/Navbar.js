@@ -9,7 +9,7 @@ class Navbar extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      current: "Portfolio",
+      current: this.props.current,
       styles: {
         root: {
           flexGrow: 1,
@@ -23,7 +23,11 @@ class Navbar extends React.Component {
         }
       }
     }
-    this.navRef = React.createRef();
+    // this.navRef = React.createRef();
+  }
+
+  componentWillReceiveProps(nextProps){
+    this.setState({current: nextProps.current})
   }
 
   render(){

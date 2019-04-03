@@ -39,7 +39,8 @@ class Home extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            worksHeight: 0
+            worksHeight: 0,
+            currentNav: "Portfolio"
         }
 
         this.handleNavbar = this.handleNavbar.bind(this)
@@ -69,18 +70,16 @@ class Home extends React.Component {
         this.setState({worksHeight: height})
     }
     
-    handleNavbar(){
-        // let horizontal = this.state.navRef.scrollTop
-        let el = false
-        if(window.pageYOffset > window.innerHeight) {
-          el = true
+    handleNavbar = () =>{
+        if(window.pageYOffset > (window.innerHeight + this.state.worksHeight) && window.pageYOffset < ((2 * window.innerHeight) + this.state.worksHeight)) {
+            this.setState({currentNav: "About"})
+        } else if(window.pageYOffset > ((2 * window.innerHeight) + this.state.worksHeight)){
+            this.setState({currentNav: "Contact"})
+        } else {
+            this.setState({currentNav: "Portfolio"})
         }
-        // if(this.worksRef.)
-        console.log(window.pageYOffset)
-        console.log(window.innerHeight)
-        console.log(el)
-        // console.log(this.state.workHeight)
-        console.log(React.Children)
+        // console.log(`offset: ${window.pageYOffset}, window + works ${window.innerHeight + this.state.worksHeight}`)
+
       }
 
     scrollToWorks = () => {
@@ -105,7 +104,8 @@ class Home extends React.Component {
                     scrollToContact={this.scrollToContact}/>
                 <div style={styles.offset} >
                     {/* <Scrollable /> */}
-                    <Navbar />
+                    <Navbar 
+                        current={this.state.currentNav}/>
                     <SelectedWorks 
                         scrollRef={this.worksRef} 
                         ref={this.testRef}
