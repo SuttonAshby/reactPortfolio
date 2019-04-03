@@ -10,6 +10,7 @@ class Navbar extends React.Component {
     super(props)
     this.state = {
       current: this.props.current,
+      blurb: this.props.blurb,
       styles: {
         root: {
           flexGrow: 1,
@@ -28,6 +29,7 @@ class Navbar extends React.Component {
 
   componentWillReceiveProps(nextProps){
     this.setState({current: nextProps.current})
+    this.setState({blurb: nextProps.blurb})
   }
 
   render(){
@@ -40,6 +42,9 @@ class Navbar extends React.Component {
           <Toolbar>
             <Typography variant="h6" >
               {this.state.current}
+            </Typography>
+            <Typography>
+              {this.state.blurb}
             </Typography>
           </Toolbar>
         </AppBar>

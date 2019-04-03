@@ -17,4 +17,6 @@ scroll over landing page
 bugs
 portfolio piece now on top of navbar when scrolling
 
+media query for when width is over over a certain extent vs height
+
 try hooks in functional component

@@ -40,7 +40,8 @@ class Home extends React.Component {
         super(props);
         this.state = {
             worksHeight: 0,
-            currentNav: "Portfolio"
+            currentNav: "Portfolio",
+            blurb: "Click on the code to go to the repository, Click on the site to go there (if there should be one)."
         }
 
         this.handleNavbar = this.handleNavbar.bind(this)
@@ -73,8 +74,10 @@ class Home extends React.Component {
     handleNavbar = () =>{
         if(window.pageYOffset > (window.innerHeight + this.state.worksHeight) && window.pageYOffset < ((2 * window.innerHeight) + this.state.worksHeight)) {
             this.setState({currentNav: "About"})
+            this.setState({blurb: "Full Stack Web Developer based out of Philadelphia, PA."})
         } else if(window.pageYOffset > ((2 * window.innerHeight) + this.state.worksHeight)){
             this.setState({currentNav: "Contact"})
+            this.setState({blurb: "Contact me through GitHub, LinkedIn, or StackOverflow."})
         } else {
             this.setState({currentNav: "Portfolio"})
         }
@@ -105,7 +108,8 @@ class Home extends React.Component {
                 <div style={styles.offset} >
                     {/* <Scrollable /> */}
                     <Navbar 
-                        current={this.state.currentNav}/>
+                        current={this.state.currentNav}
+                        blurb={this.state.blurb}/>
                     <SelectedWorks 
                         scrollRef={this.worksRef} 
                         ref={this.testRef}
