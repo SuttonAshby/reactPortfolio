@@ -15,34 +15,45 @@ const styles = {
 }
 
 
-function SelectedWorks (props) {
+class SelectedWorks extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            works: null,
+            scrollRef: this.props.scrollRef
+        }
+    }
 
-    const works = data.works.map((item) => {
-        console.log(item.codeImage)
-        console.log(item.siteImage)
-        return <PortfolioPiece 
-            title={item.title}
-            blurb={item.blurb}
-            siteImage={item.siteImage}
-            codeImage={item.codeImage}
-            />
-    })
+    componentDidMount(){
+    this.works = data.works.map((item) => {
+            console.log(item.codeImage)
+            console.log(item.siteImage)
+            return <PortfolioPiece 
+                title={item.title}
+                blurb={item.blurb}
+                siteImage={item.siteImage}
+                codeImage={item.codeImage}
+                />
+        })
+    }
 
-    return (
-        <div className="testRef" ref={props.scrollRef} style={{paddingTop:120}}>
-        <Grid container 
-            justify="center"
-            style={styles.selectedWorks}
-            spacing={16}
-            // ref={props.scrollRef}
-            >
-            {/* <div className="testRef" ref={props.scrollRef} /> */}
 
-                {works}
-        </Grid>
-        </div>
-    )
-
+    render(){
+        return (
+            <div className="testRef" ref={this.state.scrollRef} style={{paddingTop:120}}>
+            <Grid container 
+                justify="center"
+                style={styles.selectedWorks}
+                spacing={16}
+                // ref={props.scrollRef}
+                >
+                {/* <div className="testRef" ref={props.scrollRef} /> */}
+    
+                    {this.works}
+            </Grid>
+            </div>
+        )
+    }
 }
 
 export default SelectedWorks;

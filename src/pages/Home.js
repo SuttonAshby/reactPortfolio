@@ -39,10 +39,11 @@ class Home extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            workHeight: 0,
-            testing: "working"
-
+            workHeight: 0
         }
+
+        this.handleNavbar = this.handleNavbar.bind(this)
+
         this.worksRef = React.createRef();
         this.aboutRef = React.createRef();
         this.contactRef = React.createRef();
@@ -51,6 +52,8 @@ class Home extends React.Component {
     }
 
     componentDidMount() {
+        this.setState({workHeight: this.testRef.innerHeight})
+
         window.addEventListener('scroll', this.handleNavbar);
       }
       componentWillUnmount() {
@@ -58,10 +61,14 @@ class Home extends React.Component {
       }
 
     componentDidUpdate(){
-        this.setState({workHeight: 5})
+        // this.setState({workHeight: this.testRef.innerHeight})
+    }
+
+    getWorksHeight(testValue){
+        console.log(testValue)
     }
     
-      handleNavbar(){
+    handleNavbar(){
         // let horizontal = this.state.navRef.scrollTop
         let el = false
         if(window.pageYOffset > window.innerHeight) {
@@ -71,7 +78,8 @@ class Home extends React.Component {
         console.log(window.pageYOffset)
         console.log(window.innerHeight)
         console.log(el)
-        console.log(this.state.testing)
+        // console.log(this.state.workHeight)
+        console.log(React.Children)
       }
 
     scrollToWorks = () => {
@@ -96,8 +104,11 @@ class Home extends React.Component {
                     scrollToContact={this.scrollToContact}/>
                 <div style={styles.offset} >
                     {/* <Scrollable /> */}
-                    <Navbar/>
-                    <SelectedWorks scrollRef={this.worksRef} ref={this.testRef}/>
+                    <Navbar />
+                    <SelectedWorks 
+                        scrollRef={this.worksRef} 
+                        ref={this.testRef}
+                        callbackTest={this.getWorksHeight}/>
                     <About scrollRef={this.aboutRef}/>
                     <Contact scrollRef={this.contactRef}/>  
                 </div>

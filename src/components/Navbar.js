@@ -28,7 +28,10 @@ class Navbar extends React.Component {
 
   render(){
     return (
-      <div style={this.state.styles.root} >
+      <div 
+        style={this.state.styles.root}
+        // ref={this.navRef}
+         >
         <AppBar position="sticky" style={this.state.styles.navbar}>
           <Toolbar>
             <Typography variant="h6" >
