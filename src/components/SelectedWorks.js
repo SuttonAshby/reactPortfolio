@@ -20,28 +20,41 @@ class SelectedWorks extends React.Component {
         super(props)
         this.state = {
             works: null,
-            scrollRef: this.props.scrollRef
+            height: 0,
+            scrollRef: this.props.scrollRef,
+            callbackTest: this.props.callbackTest,
+            testState: "not working"
         }
+        // this.heightRef = React.createRef();
     }
 
     componentDidMount(){
     this.works = data.works.map((item) => {
-            console.log(item.codeImage)
-            console.log(item.siteImage)
+            // console.log(item.codeImage)
+            // console.log(item.siteImage)
             return <PortfolioPiece 
                 title={item.title}
                 blurb={item.blurb}
                 siteImage={item.siteImage}
                 codeImage={item.codeImage}
                 />
+        })   
+        const currentHeight = this.state.scrollRef.current.clientHeight;
+        // console.log(currentHeight)
+        this.setState({height: currentHeight}, () =>{
+            // console.log("callback log:" + this.state.height);
+            this.state.callbackTest(this.state.height);
         })
+
+        // this.state.callbackTest(this.state.height)
     }
 
 
     render(){
         return (
             <div className="testRef" ref={this.state.scrollRef} style={{paddingTop:120}}>
-            <Grid container 
+            <Grid container
+                ref = {this.heightRef} 
                 justify="center"
                 style={styles.selectedWorks}
                 spacing={16}

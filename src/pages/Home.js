@@ -39,7 +39,7 @@ class Home extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            workHeight: 0
+            worksHeight: 0
         }
 
         this.handleNavbar = this.handleNavbar.bind(this)
@@ -64,8 +64,9 @@ class Home extends React.Component {
         // this.setState({workHeight: this.testRef.innerHeight})
     }
 
-    getWorksHeight(testValue){
-        console.log(testValue)
+    getWorksHeight = (height) => {
+        // console.log("callback from home:" + testValue)
+        this.setState({worksHeight: height})
     }
     
     handleNavbar(){
