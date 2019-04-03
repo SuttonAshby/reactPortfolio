@@ -5,6 +5,7 @@ dynamic nav text
 generate portfolio pieces from data
 footer
 on hover for buttons
+on hover for portfolio pieces
 
 scroll to element
 scroll over landing page

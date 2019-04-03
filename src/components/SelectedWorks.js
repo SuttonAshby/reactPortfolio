@@ -22,8 +22,8 @@ class SelectedWorks extends React.Component {
             works: null,
             height: 0,
             scrollRef: this.props.scrollRef,
-            callbackTest: this.props.callbackTest,
-            testState: "not working"
+            heightCallback: this.props.heightCallback,
+            // testState: "not working"
         }
         // this.heightRef = React.createRef();
     }
@@ -43,7 +43,7 @@ class SelectedWorks extends React.Component {
         // console.log(currentHeight)
         this.setState({height: currentHeight}, () =>{
             // console.log("callback log:" + this.state.height);
-            this.state.callbackTest(this.state.height);
+            this.state.heightCallback(this.state.height);
         })
 
         // this.state.callbackTest(this.state.height)

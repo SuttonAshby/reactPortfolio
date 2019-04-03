@@ -80,6 +80,7 @@ class Home extends React.Component {
             this.setState({blurb: "Contact me through GitHub, LinkedIn, or StackOverflow."})
         } else {
             this.setState({currentNav: "Portfolio"})
+            this.setState({blurb: "Click on the code to go to the repository, Click on the site to go there (if there should be one)."})
         }
         // console.log(`offset: ${window.pageYOffset}, window + works ${window.innerHeight + this.state.worksHeight}`)
 
@@ -113,7 +114,7 @@ class Home extends React.Component {
                     <SelectedWorks 
                         scrollRef={this.worksRef} 
                         ref={this.testRef}
-                        callbackTest={this.getWorksHeight}/>
+                        heightCallback={this.getWorksHeight}/>
                     <About scrollRef={this.aboutRef}/>
                     <Contact scrollRef={this.contactRef}/>  
                 </div>

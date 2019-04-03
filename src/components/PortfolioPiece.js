@@ -14,12 +14,16 @@ class PortfolioPiece extends React.Component {
                 top: 0,
                 left: 0,
                 backgroundSize: "cover",
-                width: 300,
+                width: 450,
                 height: 300,
+                // width: "30vw",
+                // height: "calc(30vw/1.5)",
             },
             imageContainer: {
-                width: 300,
+                width: 450,
                 height: 300,
+                // width: "30vw",
+                // height: "calc(30vw/1.5)",
                 position: "relative",
             },
             card: {

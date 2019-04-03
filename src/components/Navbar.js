@@ -5,6 +5,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
+import NavButton from "./NavButton.js";
+
 class Navbar extends React.Component {
   constructor(props) {
     super(props)
@@ -21,6 +23,7 @@ class Navbar extends React.Component {
         },
         navbar: {
           background: "rgba(255,255,255,.4)",
+          height: 100
         }
       }
     }
@@ -40,12 +43,16 @@ class Navbar extends React.Component {
          >
         <AppBar position="sticky" style={this.state.styles.navbar}>
           <Toolbar>
-            <Typography variant="h6" >
+            <Typography 
+            variant="h6"
+            // fontFamily="PT\ Mono"
+            >
               {this.state.current}
             </Typography>
             <Typography>
               {this.state.blurb}
             </Typography>
+            <NavButton />
           </Toolbar>
         </AppBar>
       </div>
