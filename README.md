@@ -15,6 +15,11 @@ scroll over landing page
     need event listener on resize to update component heights
 
 
+add flex to navbar
+get height of all key components to base scrolling on
+optimize tri and button base
+
+
 bugs
 portfolio piece now on top of navbar when scrolling
 
