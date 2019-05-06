@@ -25,4 +25,8 @@ portfolio piece now on top of navbar when scrolling
 
 media query for when width is over over a certain extent vs height
 
+redesign - with secondary component swapping to display
+    modal-esque
+
+
 try hooks in functional component

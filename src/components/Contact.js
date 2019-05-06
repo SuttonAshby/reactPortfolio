@@ -19,7 +19,7 @@ function Contact(props) {
 
     return (
         <div style={styles.contact} ref={props.scrollRef}>
-            
+                
         </div>
     )
 }
