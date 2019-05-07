@@ -123,4 +123,8 @@ class Home extends React.Component {
     }
 }
 
+//convert to single scrollable item which houses the different sections.
+//clicking on a section swaps the display and then scrolls down.
+
+
 export default Home;
