@@ -111,12 +111,12 @@ class Home extends React.Component {
                     <Navbar 
                         current={this.state.currentNav}
                         blurb={this.state.blurb}/>
-                    <SelectedWorks 
+                    {/* <SelectedWorks 
                         scrollRef={this.worksRef} 
                         ref={this.testRef}
                         heightCallback={this.getWorksHeight}/>
                     <About scrollRef={this.aboutRef}/>
-                    <Contact scrollRef={this.contactRef}/>  
+                    <Contact scrollRef={this.contactRef}/>   */}
                 </div>
             </div>
         )
