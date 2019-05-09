@@ -25,7 +25,8 @@ const styles = {
         backgroundImage: `url(${background})`,
         // background: "red",
         // backgroundSize: "cover"
-        minHeight: "300vh",
+        minHeight: "100vh",
+        // height:  "100vh",
         width: "100vw",
         maxWidth: "100%",
         position: "relative"    
